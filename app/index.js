@@ -1,4 +1,4 @@
-// Galeria comida App 🏰 
+// Galeria comida App 
 import {myData} from './data.js';
 const mySection = document.getElementById("articles-container");
 const cartModal = document.getElementById("cartModal");
@@ -47,9 +47,9 @@ function createCartItem(item, index) {
   return cartItem;
 }
 
-// Add this function to remove all items from the cart
+// Eliminar todo del carrito
 function removeAllFromCart() {
-  cart.length = 0; // This will empty the array
+  cart.length = 0; 
   renderCart();
 }
 
@@ -57,7 +57,7 @@ function removeAllFromCart() {
 function renderCart() {
   cartItems.textContent = ''; // Clear the cart items
 
-  // Add a "Remove All" button if there are more than two items in the cart
+  // agrego  "Remove All" button si hay mas de uno 
   if (cart.length > 2) {
     const removeAllButton = document.createElement('button');
     removeAllButton.textContent = 'Eliminar todo';
@@ -117,7 +117,6 @@ closeCartButton.addEventListener('click', () => cartModal.classList.add('hidden'
 toggleCartButton.addEventListener('click', () => cartModal.classList.remove('hidden'));
 
 // **onload or event load**
-// Al hacer f5 me guarda todo en el carrito y en el Local
 window.addEventListener('load', () => {
   const savedCart = localStorage.getItem('cartItems');
   if (savedCart) {
